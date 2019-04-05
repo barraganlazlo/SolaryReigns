@@ -1,0 +1,94 @@
+html,
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.color1 {
+    color: #080705
+}
+
+.color2 {
+    color: #84DCCF
+}
+
+.color3 {
+    color: #0B4F6C
+}
+
+.color4 {
+    color: #001242
+}
+
+.color5 {
+    color: #339989
+}
+
+.background-color1 {
+    background-color: #080705
+}
+
+.background-color2 {
+    background-color: #84DCCF
+}
+
+.background-color3 {
+    background-color: #0B4F6C
+}
+
+.background-color4 {
+    background-color: #001242
+}
+
+.background-color5 {
+    background-color: #339989
+}
+
+.progress {
+    background-color: transparent;
+    width: 92px;
+    height: 92px;
+}
+
+.progress-bar {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    vertical-align: bottom;
+}
+
+.hype-image1 {
+    background-image: url("../images/svg/hype1.svg");
+}
+
+.money-image1 {
+    background-image: url("../images/svg/money1.svg");
+}
+
+.reputation-image1 {
+    background-image: url("../images/svg/reputation1.svg");
+}
+
+.hype-image2 {
+    background-image: url("../images/svg/hype2.svg");
+}
+
+.money-image2 {
+    background-image: url("../images/svg/money2.svg");
+}
+
+.reputation-image2 {
+    background-image: url("../images/svg/reputation2.svg");
+}
+
+.event-container {
+    max-width: 480px;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.event-image-container {
+    height: 320px;
+    border-radius: 25px;
+}
