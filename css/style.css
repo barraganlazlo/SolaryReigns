@@ -1,5 +1,6 @@
 html,
 body {
+    width: 100%;
     margin: 0px;
     padding: 0px;
 }
@@ -89,7 +90,7 @@ body {
 }
 
 .event-choice-container {
-    height: 320px;
+    min-height: 320px;
     border-radius: 25px;
 }
 
