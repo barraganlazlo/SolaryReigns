@@ -17,7 +17,7 @@ body {
 }
 
 .color4 {
-    color: #001242
+    color: #474A48
 }
 
 .color5 {
@@ -37,7 +37,7 @@ body {
 }
 
 .background-color4 {
-    background-color: #001242
+    background-color: #474A48
 }
 
 .background-color5 {
@@ -46,8 +46,8 @@ body {
 
 .progress {
     background-color: transparent;
-    width: 92px;
-    height: 92px;
+    width: 5em;
+    height: 5em;
 }
 
 .progress-bar {
@@ -88,7 +88,36 @@ body {
     border-radius: 5px;
 }
 
-.event-image-container {
+.event-choice-container {
     height: 320px;
     border-radius: 25px;
+}
+
+.event-choice-text {
+    font-size: 1.3em;
+    padding: 1em;
+    min-height: 30%;
+    border-radius: 25px 25px 0px 0px;
+}
+
+#event-choice-1 {
+    text-align: left;
+    background: -moz-linear-gradient(275deg, #474A48 67%, rgba(125, 185, 232, 0) 68%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(275deg, #474A48 67%, rgba(125, 185, 232, 0) 68%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(175deg, #474A48 67%, rgba(0, 0, 0, 0) 68%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    opacity: 0;
+}
+
+#event-choice-2 {
+    text-align: right;
+    background: -moz-linear-gradient(275deg, #474A48 67%, rgba(125, 185, 232, 0) 68%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(275deg, #474A48 67%, rgba(125, 185, 232, 0) 68%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(185deg, #474A48 67%, rgba(0, 0, 0, 0) 68%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    opacity: 0;
 }
