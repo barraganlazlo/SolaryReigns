@@ -31,7 +31,7 @@ function onMouseMove(mouseEvent) {
         slideLeft();
     } else { //middle        
         console.log("middle");
-        resetEvent();
+        slideMiddle();
     }
 }
 
