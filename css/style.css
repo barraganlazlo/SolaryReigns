@@ -1,8 +1,12 @@
 html,
 body {
-    width: 100%;
+    height: 100%;
     margin: 0px;
     padding: 0px;
+}
+
+body {
+    position: relative;
 }
 
 .color1 {
@@ -81,6 +85,61 @@ body {
 
 .reputation-image2 {
     background-image: url("../images/svg/reputation2.svg");
+}
+
+.solary-bottom-image {
+    background-image: url("../images/solary-bottom.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    right: 50%;
+    margin-right: -50px;
+}
+
+.solary-top-image {
+    background-image: url("../images/solary-top.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    left: 50%;
+    margin-left: -50px;
+}
+
+.solary-logo {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    top: 50%;
+    margin-top: -50px;
+}
+
+.panel-container {
+    position: fixed;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+    height: 100%;
+    width: 100%;
+}
+
+.panel {
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    height: 100%;
+}
+
+.panel-left {
+    left: 0%;
+    right: 50%;
+    border-right: 0.5em solid #999;
+}
+
+.panel-right {
+    left: 50%;
+    right: 0%;
+    border-left: 0.5em solid #999;
 }
 
 .event-container {
@@ -176,11 +235,4 @@ body {
     background-image: url('../images/svg/orbit.svg');
     background-repeat: no-repeat;
     background-position: center center;
-}
-
-.flipped {
-    -webkit-transform: rotateY( 180deg);
-    -moz-transform: rotateY( 180deg);
-    -o-transform: rotateY( 180deg);
-    transform: rotateY( 180deg);
 }
