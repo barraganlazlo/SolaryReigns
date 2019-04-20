@@ -6,6 +6,13 @@ var mouseObj = {
         let left = $(".event-container").offset().left;
         let right = $(".event-container").offset().left + $(".event-container").width();
         this.value = mathf.normalize(e.pageX, left, right);
+        if (mouseObj.value > 0.5 + mouseObj.sideThreshold) {
+            mouseObj.position = "right";
+        } else if (mouseObj.value < 0.5 - mouseObj.sideThreshold) {
+            mouseObj.position = "left";
+        } else {
+            mouseObj.position = "middle";
+        }
     }
 }
 var startingAnimation = null;
@@ -16,8 +23,6 @@ $(window).on('load', init);
 
 function init(e) {
     setupStartingAnimation();
-    $("#event-choice-1");
-    $("#event-choice-2").hide();
     $(window).on("click", onMouseClick);
     $(window).on("mousemove", onMouseMove);
 }
@@ -29,20 +34,14 @@ function StartGame() {
 
 function onMouseMove(e) {
     mouseObj.updateValue(e);
-    console.log(mouseObj.value);
     if (gamestarted) {
-        if (mouseObj.value > 0.5 + mouseObj.sideThreshold) {
-            mouseObj.position = "right";
-        } else if (mouseObj.value < 0.5 - mouseObj.sideThreshold) {
-            mouseObj.position = "left";
-        } else {
-            mouseObj.position = "middle";
-        }
+
         card.follow();
     }
 }
 
 function onMouseClick(e) {
+    mouseObj.updateValue(e);
     if (gamestarted) {
         card.fade();
     } else {
@@ -65,6 +64,24 @@ var card = {
             },
             rotate: function() {
                 return -mathf.lerp(mouseObj.value, -15, 15);
+            },
+            duration: 0,
+            loop: false
+        });
+        anime({
+            targets: ['#event-choice-1', "#event-choice-2"],
+            opacity: function(el, i, tl) {
+                if (i == 1) {
+                    if (mouseObj.position != "left") {
+                        return 0;
+                    }
+                    return 1 - mouseObj.value;
+                } else {
+                    if (mouseObj.position != "right") {
+                        return 0;
+                    }
+                    return mouseObj.value;
+                }
             },
             duration: 0,
             loop: false
@@ -94,6 +111,25 @@ var card = {
                     }
                 });
             }
+        });
+
+        anime({
+            targets: ['#event-choice-1', "#event-choice-2"],
+            opacity: function(el, i, tl) {
+                if (i == 1) {
+                    if (mouseObj.position != "left") {
+                        return 0;
+                    }
+                    return 1 - mouseObj.value;
+                } else {
+                    if (mouseObj.position != "right") {
+                        return 0;
+                    }
+                    return mouseObj.value;
+                }
+            },
+            duration: 200,
+            loop: false
         });
     },
     fade: function() {

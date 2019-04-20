@@ -53,8 +53,8 @@ body {
 
 .progress {
     background-color: transparent;
-    width: 5em;
-    height: 5em;
+    width: 10vh;
+    height: 10vh;
 }
 
 .progress-bar {
@@ -63,6 +63,10 @@ body {
     background-size: cover;
     width: 100%;
     vertical-align: bottom;
+}
+
+.ressources-container {
+    margin-top: 1vh;
 }
 
 .hype-image1 {
@@ -142,15 +146,36 @@ body {
     right: 0%;
 }
 
+.game-container {
+    height: 100%;
+}
+
+.ressources-container {
+    height: 10%;
+}
+
 .event-container {
     max-width: 480px;
+    height: 90%;
+    width: 100%;
     margin: auto;
     border-radius: 5px;
 }
 
+.event-text-container {
+    height: 50%
+}
+
+.event-title {
+    font-size: 6vh;
+}
+
+.event-description {
+    font-size: 2.2vh;
+}
+
 .event-choice-container,
 .event-deck {
-    min-height: 320px;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -164,7 +189,8 @@ body {
 
 .event-card-container {
     position: relative;
-    min-height: 320px;
+    height: 50%;
+    margin-bottom: 0;
 }
 
 .event-choice-front {
@@ -173,7 +199,6 @@ body {
 
 .event-choice-front,
 .event-choice-back {
-    min-height: 320px;
     border-radius: 25px;
     position: absolute;
     top: 0;
@@ -194,10 +219,14 @@ body {
 }
 
 .event-choice-text {
-    font-size: 1.3em;
+    position: absolute;
+    left: 0;
+    right: 0;
+    font-size: 4vh;
     padding: 1em;
-    min-height: 30%;
+    height: 30%;
     border-radius: 25px 25px 0px 0px;
+    opacity: 0;
 }
 
 #event-choice-1 {
@@ -208,7 +237,6 @@ body {
     /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(175deg, #474A48 67%, rgba(0, 0, 0, 0) 68%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    opacity: 0;
 }
 
 #event-choice-2 {
@@ -219,7 +247,6 @@ body {
     /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(185deg, #474A48 67%, rgba(0, 0, 0, 0) 68%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    opacity: 0;
 }
 
 .event-choice-image,
