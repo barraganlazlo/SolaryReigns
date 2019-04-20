@@ -160,9 +160,10 @@ var card = {
                     return "-=180";
                 }
             },
-            opacity: { value: 0, delay: 500 },
+            opacity: { value: 0, delay: 125 },
             loop: false,
             easing: 'easeInOutSine',
+            duration: 500,
             complete: function() {
                 card.reset();
                 card.turn();
