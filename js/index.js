@@ -1,123 +1,70 @@
-var mouse_side_threshold = 100;
-var translateXValue = 25;
-var translateYValue = 15;
-var rotateValue = 10;
-var position = "middle";
-var mousePosition = 0;
-var event_choice_1;
-var event_choice_2;
-var reseting = false;
+var mouseObj = {
+    position: "middle",
+    sideThreshold: 0.1,
+    value: 1
+}
+var turned = true;
+var playingAnimation = false;
 
 function init() {
     console.log("init");
-    event_choice_1 = $("#event-choice-1").hide();
-    event_choice_2 = $("#event-choice-2").hide();
+    $("#event-choice-1");
+    $("#event-choice-2").hide();
     $(window).click(onMouseClick);
     $(window).mousemove(onMouseMove);
+    card.turn();
 }
 
 function onMouseMove(mouseEvent) {
-    if (reseting) {
-        return;
-    }
-    var centerX = $(window).width() / 2;
-    mousePosition = mouseEvent.clientX - centerX;
-    if (mouseEvent.clientX > centerX + mouse_side_threshold) { // right
-        console.log("right");
-        slideRight();
+    let left = $(".event-container").offset().left;
+    let right = $(".event-container").offset().left + $(".event-container").width();
 
-    } else if (mouseEvent.clientX < centerX - mouse_side_threshold) { // left
-        console.log("left");
-        slideLeft();
-    } else { //middle        
-        console.log("middle");
-        slideMiddle();
+    mouseObj.value = mathf.normalize(mouseEvent.clientX, left, right);
+
+    card.follow();
+
+    if (mouseObj.value > 0.5 + mouseObj.sideThreshold) {
+        position = "right";
+    } else if (mouseObj.value < 0.5 - mouseObj.sideThreshold) {
+        position = "left";
+    } else {
+        position = "middle";
     }
 }
 
 function onMouseClick(mouseEvent) {
-    console.log("click" + position);
-    if (position == "middle") {
-        return;
+    card.turn();
+}
+var card = {
+    follow: function() {
+        if (playingAnimation) {
+            return;
+        }
+        anime({
+            targets: '.event-choice-container',
+            translateX: -mathf.lerp(mouseObj.value, -50, 50),
+            rotate: -mathf.lerp(mouseObj.value, -15, 15),
+            duration: 0,
+            loop: false
+        });
+    },
+    turn: function() {
+        if (playingAnimation) {
+            return;
+        }
+        playingAnimation = true;
+        anime({
+            targets: ".event-choice-container",
+            scale: [{ value: 1 }, { value: 1.1 }, { value: 1, delay: 250 }],
+            rotateY: { value: '+=180', delay: 200 },
+            easing: 'easeInOutSine',
+            duration: 400,
+            complete: function(anim) {
+                playingAnimation = false;
+            }
+        });
+    },
+    fade: function() {
+
     }
-    reseting = true;
-    var i = -1;
-    if (position == "right") {
-        i = 1;
-    }
-    console.log(i);
-    anime({
-        targets: '.event-choice-container',
-        translateX: i * 200,
-        opacity: 0,
-        complete: resetEvent(),
-        loop: false
-    });
 }
-
-function slideLeft() {
-    position = "left";
-    anime({
-        targets: '.event-choice-container',
-        translateX: -translateXValue,
-        translteY: -translateYValue,
-        rotate: -rotateValue,
-        duration: 500,
-        loop: false
-    });
-    event_choice_1.hide();
-    event_choice_2.show();
-    anime({
-        targets: '#event-choice-2',
-        opacity: 1,
-        duration: 500,
-        loop: false
-    });
-}
-
-function slideRight() {
-    position = "right";
-    anime({
-        targets: '.event-choice-container',
-        translateX: translateXValue,
-        translteY: -translateYValue,
-        rotate: rotateValue,
-        duration: 500,
-        loop: false
-    });
-    event_choice_2.hide();
-    event_choice_1.show();
-    anime({
-        targets: '#event-choice-1',
-        opacity: 1,
-        duration: 500,
-        loop: false
-    });
-}
-
-function slideMiddle(callback) {
-    position = "middle";
-    anime({
-        targets: '.event-choice-container',
-        translateX: 0,
-        translteY: 0,
-        rotate: '0',
-        duration: 500,
-        opacity: 1,
-        loop: false
-    });
-    anime({
-        targets: '#event-choice-1',
-        opacity: 0,
-        duration: 500,
-        loop: false
-    });
-    anime({
-        targets: '#event-choice-2',
-        opacity: 0,
-        duration: 500,
-        loop: false
-    });
-}
-
-function resetEvent() {}

@@ -6,6 +6,7 @@ html
     script(src="js/jquery-3.3.1.min.js")
     script(src="js/anime-3.0.1.min.js")
     script(src="js/index.js")
+    script(src="js/mathf.js")
   body.background-color1(onload="init()")
     .container-fluid.p-3.justify-content-center
         .ressources-container.row.justify-content-center
@@ -23,8 +24,12 @@ html
                 p.event-description.color3.text-justify 
                   |Cognitis enim pilatorum caesorumque funeribus nemo deinde ad has stationes appulit navem, sed ut Scironis praerupta letalia declinantes litoribus Cypriis contigui navigabant, quae Isauriae scopulis sunt controversa. 
                   |Montius nos tumore inusitato quodam et novo ut rebellis et maiestati recalcitrantes Augustae per haec quae strepit incusat iratus nimirum quod contumacem praefectum, quid rerum ordo postulat ignorare dissimulantem formidine tenus iusserim custodiri. 
-          .event-choice-container.background-color1
-              .event-choice-text.color5#event-choice-1  Choice 1
-              .event-choice-text.color5#event-choice-2  Choice 2
-              .event-choice-image-container
-                .event-choice-image
+          .event-card-container          
+            .event-deck.background-color3
+            .event-choice-container.flipped
+              .event-choice-back.background-color3
+              .event-choice-front.background-color4
+                .event-choice-text.color5#event-choice-1  Choice 1
+                .event-choice-text.color5#event-choice-2  Choice 2
+                .event-choice-image-container
+                  .event-choice-image

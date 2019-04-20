@@ -89,9 +89,49 @@ body {
     border-radius: 5px;
 }
 
-.event-choice-container {
+.event-choice-container,
+.event-deck {
+    min-height: 320px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.event-deck {
+    border-radius: 25px;
+}
+
+.event-card-container {
+    position: relative;
+    min-height: 320px;
+}
+
+.event-choice-front {
+    transform: rotateY(180deg);
+}
+
+.event-choice-front,
+.event-choice-back {
     min-height: 320px;
     border-radius: 25px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.event-choice-container {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
 }
 
 .event-choice-text {
@@ -121,4 +161,26 @@ body {
     background: linear-gradient(185deg, #474A48 67%, rgba(0, 0, 0, 0) 68%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     opacity: 0;
+}
+
+.event-choice-image,
+.event-choice-image-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.event-choice-image {
+    background-image: url('../images/svg/orbit.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.flipped {
+    -webkit-transform: rotateY( 180deg);
+    -moz-transform: rotateY( 180deg);
+    -o-transform: rotateY( 180deg);
+    transform: rotateY( 180deg);
 }
