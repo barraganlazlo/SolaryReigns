@@ -29,13 +29,14 @@ function StartGame() {
 
 function onMouseMove(e) {
     mouseObj.updateValue(e);
+    console.log(mouseObj.value);
     if (gamestarted) {
         if (mouseObj.value > 0.5 + mouseObj.sideThreshold) {
-            position = "right";
+            mouseObj.position = "right";
         } else if (mouseObj.value < 0.5 - mouseObj.sideThreshold) {
-            position = "left";
+            mouseObj.position = "left";
         } else {
-            position = "middle";
+            mouseObj.position = "middle";
         }
         card.follow();
     }
@@ -70,13 +71,10 @@ var card = {
         });
     },
     turn: function() {
-        if (playingAnimation) {
-            return;
-        }
         playingAnimation = true;
         anime({
             targets: ".event-choice-container",
-            scale: [{ value: 1 }, { value: 1.1 }, { value: 1, delay: 250 }],
+            scale: [{ value: 1 }, { value: 1.2 }, { value: 1, delay: 125 }],
             rotateY: { value: '+=180', delay: 200 },
             easing: 'easeInOutSine',
             duration: 500,
@@ -102,6 +100,41 @@ var card = {
         if (playingAnimation) {
             return;
         }
+        playingAnimation = true;
+        anime({
+            targets: '.event-choice-container',
+            rotate: function() {
+                if (mouseObj.position == "left") {
+                    return -45;
+                } else {
+                    return 45;
+                }
+            },
+            translateX: function() {
+                if (mouseObj.position == "left") {
+                    return -500;
+                } else {
+                    return 500;
+                }
+            },
+            rotateY: function() {
+                if (mouseObj.position == "left") {
+                    return "+=180";
+                } else {
+                    return "-=180";
+                }
+            },
+            opacity: { value: 0, delay: 500 },
+            loop: false,
+            easing: 'easeInOutSine',
+            complete: function() {
+                card.reset();
+                card.turn();
+            }
+        });
+    },
+    reset: function() {
+        $(".event-choice-container").removeAttr('style');;
     }
 }
 
@@ -125,7 +158,6 @@ function setupStartingAnimation() {
         .add({
             targets: ['.solary-top-image', '.panel-left'],
             translateX: function(el, i) {
-                console.log($(".panel-left").width());
                 return -($(".panel-left").width() + 100);
             },
             duration: 1000

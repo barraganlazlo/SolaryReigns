@@ -3,6 +3,8 @@ body {
     height: 100%;
     margin: 0px;
     padding: 0px;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 body {
@@ -133,13 +135,11 @@ body {
 .panel-left {
     left: 0%;
     right: 50%;
-    border-right: 0.5em solid #999;
 }
 
 .panel-right {
     left: 50%;
     right: 0%;
-    border-left: 0.5em solid #999;
 }
 
 .event-container {
