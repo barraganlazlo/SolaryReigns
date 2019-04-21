@@ -12,11 +12,11 @@ body {
 }
 
 .color1 {
-    color: #080705
+    color: #101219
 }
 
 .color2 {
-    color: #84DCCF
+    color: rgb(255, 224, 0);
 }
 
 .color3 {
@@ -24,19 +24,23 @@ body {
 }
 
 .color4 {
-    color: #474A48
+    color: #00aeff
 }
 
 .color5 {
-    color: #339989
+    color: #ffffff
+}
+
+.color6 {
+    color: rgb(98, 102, 100)
 }
 
 .background-color1 {
-    background-color: #080705
+    background-color: #101219
 }
 
 .background-color2 {
-    background-color: #84DCCF
+    background-color: rgb(255, 224, 0);
 }
 
 .background-color3 {
@@ -44,11 +48,15 @@ body {
 }
 
 .background-color4 {
-    background-color: #474A48
+    background-color: #00aeff
 }
 
 .background-color5 {
-    background-color: #339989
+    background-color: #ffffff
+}
+
+.background-color6 {
+    background-color: rgb(98, 102, 100)
 }
 
 .progress {
@@ -155,7 +163,7 @@ body {
 }
 
 .event-container {
-    max-width: 480px;
+    max-width: 68vh;
     height: 90%;
     width: 100%;
     margin: auto;
@@ -227,6 +235,7 @@ body {
     height: 30%;
     border-radius: 25px 25px 0px 0px;
     opacity: 0;
+    z-index: 3;
 }
 
 #event-choice-1 {

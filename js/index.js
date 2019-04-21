@@ -213,7 +213,7 @@ function setupStartingAnimation() {
         .add({
             targets: ['.solary-top-image', '.panel-left'],
             begin: function() {
-                $(".panel-container").removeClass("background-color3");
+                $(".panel-container").removeClass("background-color4");
             },
             translateX: function(el, i) {
                 return -($(".panel-left").width() + 100);
