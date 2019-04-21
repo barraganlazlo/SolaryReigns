@@ -110,6 +110,24 @@ var card = {
                         playingAnimation = false;
                     }
                 });
+                anime({
+                    targets: ['#event-choice-1', "#event-choice-2"],
+                    opacity: function(el, i, tl) {
+                        if (i == 1) {
+                            if (mouseObj.position != "left") {
+                                return 0;
+                            }
+                            return 1 - mouseObj.value;
+                        } else {
+                            if (mouseObj.position != "right") {
+                                return 0;
+                            }
+                            return mouseObj.value;
+                        }
+                    },
+                    duration: 200,
+                    loop: false
+                });
             }
         });
 
@@ -155,12 +173,12 @@ var card = {
             },
             rotateY: function() {
                 if (mouseObj.position == "left") {
-                    return "+=180";
+                    return 360;
                 } else {
-                    return "-=180";
+                    return 0;
                 }
             },
-            opacity: { value: 0, delay: 125 },
+            opacity: { value: 0, delay: 250 },
             loop: false,
             easing: 'easeInOutSine',
             duration: 500,
@@ -194,6 +212,9 @@ function setupStartingAnimation() {
         })
         .add({
             targets: ['.solary-top-image', '.panel-left'],
+            begin: function() {
+                $(".panel-container").removeClass("background-color3");
+            },
             translateX: function(el, i) {
                 return -($(".panel-left").width() + 100);
             },
