@@ -162,8 +162,13 @@ body {
     height: 10%;
 }
 
+@media screen and (orientation:landscape) {
+    .event-container {
+        max-width: 68vh;
+    }
+}
+
 .event-container {
-    max-width: 68vh;
     height: 90%;
     width: 100%;
     margin: auto;
