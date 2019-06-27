@@ -1,10 +1,10 @@
 var events = {
-    loadData: function() {
-        $.getJSON("data.json", function(data) {
-            events.data = data;
+    loadData: function(callback) {
+        $.getJSON("./data.json", function(data) {
+            if (data) {
+                events.data = data;
+                callback();
+            }
         });
-    },
-    onDataLoaded: function() {
-
     }
 }

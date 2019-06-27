@@ -136,5 +136,14 @@ var card = {
     },
     reset: function() {
         $(".event-choice-container").removeAttr('style');;
+        this.loadEvent(mathf.getRandomInt(0, events.data.length));
+    },
+    loadEvent: function(id) {
+        console.log(id);
+        event = events.data[id];
+        $(".event-title").text(event.nom);
+        $(".event-description").text(event.description);
+        $("#event-choice-1").text(event.premierChoix.choix);
+        $("#event-choice-2").text(event.secondChoix.choix);
     }
 }

@@ -22,9 +22,14 @@ var playingAnimation = false;
 $(window).on('load', init);
 
 function init(e) {
+    events.loadData(onEventsDataLoaded);
     setupStartingAnimation();
+}
+
+function onEventsDataLoaded() {
     $(window).on("click", onMouseClick);
     $(window).on("mousemove", onMouseMove);
+    card.reset();
 }
 
 function StartGame() {
