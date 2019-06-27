@@ -1,4 +1,4 @@
-var mathf = {
+var math = {
     lerp: function(amount, min, max) {
         return (1 - amount) * min + amount * max;
     },
