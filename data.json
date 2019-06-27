@@ -1,0 +1,116 @@
+[{
+        "nom": "Chap se fait ban par Twitch.",
+        "description": "Chap à montrer des choses qu'il ne fallait pas à l'écran. Twitch à réagit d'emblée en le banissant indéfiniement. Que voulez vous faire ?",
+        "premierChoix": {
+            "choix": "Virer Chap",
+            "argent": 10,
+            "hype": -10,
+            "réputation": -10
+        },
+        "secondChoix": {
+            "choix": "Le soutenir jusqu'à son retour",
+            "argent": -10,
+            "hype": 0,
+            "réputation": 0
+        },
+        "tags": [
+            "Chap",
+            "Twicth"
+        ]
+    },
+    {
+        "nom": "Offre de sponsorisation de la part de Logitech",
+        "description": "Nous avons reçu une offre de Logitech, nous devons mettre en avant leur matériel informatique en échange de quoi ils nous fournissent du matériel ainsi que de l'argent",
+        "premierChoix": {
+            "choix": "Accepter l'offre",
+            "argent": 10,
+            "hype": -5,
+            "réputation": 0
+        },
+        "secondChoix": {
+            "choix": "Refuser l'offre",
+            "argent": -10,
+            "hype": 0,
+            "réputation": 0
+        },
+        "tags": [
+            "Sponso"
+        ]
+    },
+    {
+        "nom": "Offre de sponsorisation de la part de Feed",
+        "description": "Nous avons reçu une offre de Feed, nous devons mettre en avant leur matériel informatique en échange de quoi ils nous fournissent de la nourriture ainsi que de l'argent",
+        "premierChoix": {
+            "choix": "Accepter l'offre",
+            "argent": 20,
+            "hype": -10,
+            "réputation": -10
+        },
+        "secondChoix": {
+            "choix": "Refuser l'offre",
+            "argent": -10,
+            "hype": 0,
+            "réputation": 5
+        },
+        "tags": [
+            "Sponso"
+        ]
+    },
+    {
+        "nom": "Tio est en retard",
+        "description": "Tio est arrivé en retard toute la semaine. Comment réagit tu ?",
+        "premierChoix": {
+            "choix": "Le sermoner",
+            "argent": 5,
+            "hype": 0,
+            "réputation": -10
+        },
+        "secondChoix": {
+            "choix": "Ne rien faire",
+            "argent": -5,
+            "hype": 0,
+            "réputation": 10
+        },
+        "tags": [
+            "Tio"
+        ]
+    },
+    {
+        "nom": "Organisation d'un évènement de rencontre avec les viewer",
+        "description": "Ca fait un moment que les viewers n'ont pas eu l'occasion de nous rencontrer. Nous devons organiser un évènement de rencontre avec eux.",
+        "premierChoix": {
+            "choix": "Organiser un évènement à Paris",
+            "argent": -20,
+            "hype": 30,
+            "réputation": 10
+        },
+        "secondChoix": {
+            "choix": "Organiser un petit évènement à tours",
+            "argent": 0,
+            "hype": 10,
+            "réputation": 0
+        },
+        "tags": [
+            "Event"
+        ]
+    },
+    {
+        "nom": "La Lyon e-sport se prépare",
+        "description": "Une Lan majeure se prépare, la Lyon e-sport. Nos joueurs sont impatients de pouvoir y participer et monrer leurs talents",
+        "premierChoix": {
+            "choix": "Faire participer l'équipe 1",
+            "argent": 0,
+            "hype": 0,
+            "réputation": -10
+        },
+        "secondChoix": {
+            "choix": "Faire participer les deux équipes",
+            "argent": -20,
+            "hype": 20,
+            "réputation": 10
+        },
+        "tags": [
+            "Lan"
+        ]
+    }
+]
