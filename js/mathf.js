@@ -1,5 +1,4 @@
 var mathf = {
-
     lerp: function(amount, min, max) {
         return (1 - amount) * min + amount * max;
     },
@@ -16,5 +15,11 @@ var mathf = {
         }
 
         return value;
+    },
+    getRandomInt: function(min, max) {
+        if (max == null) {
+            return Math.floor(Math.random() * Math.floor(min));
+        }
+        return Math.floor(Math.random() * Math.floor(max)) + min;
     }
 };
